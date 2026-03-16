@@ -8,40 +8,6 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
     <link rel="stylesheet" href="/index.css">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-        import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyBsTMl0VnvnQAhlPaaffrfMH3F8MV3lflo",
-            authDomain: "spring-market-417215.firebaseapp.com",
-            projectId: "spring-market-417215",
-            storageBucket: "spring-market-417215.firebasestorage.app",
-            messagingSenderId: "388221488071",
-            appId: "1:388221488071:web:b843c75e08257c314aa7e2"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app, "ai-studio-0ecd2d1d-2d23-4058-8630-d355f4f10da0");
-        const auth = getAuth(app);
-        const provider = new GoogleAuthProvider();
-
-        // Expose to window for the non-module scripts
-        window.db = db;
-        window.auth = auth;
-        window.provider = provider;
-        window.addDoc = addDoc;
-        window.collection = collection;
-        window.serverTimestamp = serverTimestamp;
-        window.query = query;
-        window.orderBy = orderBy;
-        window.onSnapshot = onSnapshot;
-        window.deleteDoc = deleteDoc;
-        window.doc = doc;
-        window.signInWithPopup = signInWithPopup;
-        window.signOut = signOut;
-    </script>
 </head>
 <body class="min-h-screen selection:bg-[#D4AF37] selection:text-black">
 
@@ -58,7 +24,6 @@
                 <a href="#metodo" class="hover:bg-[#D4AF37] hover:text-black px-4 py-2 rounded-sm transition-all duration-300 transform hover:scale-110">O Método</a>
                 <a href="#depoimentos" class="hover:bg-[#D4AF37] hover:text-black px-4 py-2 rounded-sm transition-all duration-300 transform hover:scale-110">Depoimentos</a>
                 <a href="#conteudo" class="hover:bg-[#D4AF37] hover:text-black px-4 py-2 rounded-sm transition-all duration-300 transform hover:scale-110">Conteúdo</a>
-                <a href="javascript:void(0)" onclick="showAdminLogin()" class="hover:text-[#D4AF37] transition-colors">Admin</a>
                 <a href="#contato" class="bg-[#D4AF37] text-black px-8 py-3 rounded-sm transition-all duration-300 transform hover:scale-110">
                     Agende sua Aula
                 </a>
@@ -447,65 +412,6 @@
         </div>
     </section>
 
-    <!-- Admin Dashboard Modal -->
-    <div id="adminModal" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-sm overflow-y-auto">
-        <div class="max-w-6xl mx-auto px-6 py-20">
-            <div class="flex justify-between items-center mb-12">
-                <h2 class="text-4xl font-black uppercase italic tracking-tighter">Dashboard <span class="text-[#D4AF37]">Admin</span></h2>
-                <button onclick="closeAdmin()" class="text-white/40 hover:text-white transition-colors">
-                    <i data-lucide="x" class="w-8 h-8"></i>
-                </button>
-            </div>
-
-            <!-- Login Step -->
-            <div id="adminAuth" class="max-w-md mx-auto text-center space-y-8 py-20">
-                <div id="passwordStep">
-                    <p class="text-white/60 mb-6 uppercase tracking-widest text-sm font-bold">Acesso Restrito</p>
-                    <input type="password" id="adminPassword" placeholder="Senha do Administrador" class="w-full bg-zinc-900 border border-white/10 px-6 py-4 focus:border-[#D4AF37] outline-none transition-colors font-bold text-center mb-4">
-                    <button onclick="checkAdminPassword()" class="w-full py-4 bg-[#D4AF37] text-black font-black uppercase tracking-widest hover:scale-105 transition-transform">Entrar</button>
-                </div>
-                <div id="googleStep" class="hidden">
-                    <p class="text-white/60 mb-6 uppercase tracking-widest text-sm font-bold">Verificação de Identidade</p>
-                    <button onclick="loginWithGoogle()" class="w-full py-4 bg-white text-black font-black uppercase tracking-widest hover:scale-105 transition-transform flex items-center justify-center gap-3">
-                        <i data-lucide="log-in" class="w-5 h-5"></i>
-                        Login com Google
-                    </button>
-                    <p class="text-xs text-white/30 mt-4">Acesse com o e-mail: danielvendas25@gmail.com</p>
-                </div>
-            </div>
-
-            <!-- Dashboard Content -->
-            <div id="adminContent" class="hidden">
-                <div class="flex justify-between items-center mb-8">
-                    <div class="flex gap-4">
-                        <div class="bg-zinc-900 border border-white/10 p-6 rounded-sm">
-                            <p class="text-xs font-black uppercase tracking-widest text-white/40 mb-1">Total de Leads</p>
-                            <p id="totalLeads" class="text-3xl font-black text-[#D4AF37]">0</p>
-                        </div>
-                    </div>
-                    <button onclick="logoutAdmin()" class="text-xs font-black uppercase tracking-widest text-white/40 hover:text-red-500 transition-colors">Sair</button>
-                </div>
-
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse">
-                        <thead>
-                            <tr class="border-b border-white/10">
-                                <th class="py-4 px-4 text-xs font-black uppercase tracking-widest text-white/40">Data</th>
-                                <th class="py-4 px-4 text-xs font-black uppercase tracking-widest text-white/40">Nome</th>
-                                <th class="py-4 px-4 text-xs font-black uppercase tracking-widest text-white/40">WhatsApp</th>
-                                <th class="py-4 px-4 text-xs font-black uppercase tracking-widest text-white/40">Objetivo</th>
-                                <th class="py-4 px-4 text-xs font-black uppercase tracking-widest text-white/40">Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody id="leadsTableBody">
-                            <!-- Leads will be injected here -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer class="py-20 bg-black border-t border-[#D4AF37]/10">
         <div class="max-w-7xl mx-auto px-6 text-center">
@@ -532,58 +438,11 @@
         </div>
     </footer>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-        import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyBsTMl0VnvnQAhlPaaffrfMH3F8MV3lflo",
-            authDomain: "spring-market-417215.firebaseapp.com",
-            projectId: "spring-market-417215",
-            storageBucket: "spring-market-417215.firebasestorage.app",
-            messagingSenderId: "388221488071",
-            appId: "1:388221488071:web:b843c75e08257c314aa7e2"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app, "ai-studio-0ecd2d1d-2d23-4058-8630-d355f4f10da0");
-        const auth = getAuth(app);
-        const provider = new GoogleAuthProvider();
-
+    <script>
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Firestore Error Handling
-        function handleFirestoreError(error, operationType, path) {
-            const errInfo = {
-                error: error instanceof Error ? error.message : String(error),
-                authInfo: {
-                    userId: auth.currentUser?.uid,
-                    email: auth.currentUser?.email,
-                    emailVerified: auth.currentUser?.emailVerified,
-                    isAnonymous: auth.currentUser?.isAnonymous,
-                    providerInfo: auth.currentUser?.providerData.map(provider => ({
-                        providerId: provider.providerId,
-                        displayName: provider.displayName,
-                        email: provider.email,
-                        photoUrl: provider.photoURL
-                    })) || []
-                },
-                operationType,
-                path
-            };
-            console.error('Firestore Error: ', JSON.stringify(errInfo));
-            // We don't necessarily want to throw and crash the app, but we must log it this way
-            return errInfo;
-        }
-
-        // Admin Functions
-        window.showAdminLogin = function() {
-            document.getElementById('adminModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        };
-
+        // Carousel Scroll Logic
         window.scrollCarousel = function(direction) {
             const carousel = document.getElementById('testimonialCarousel');
             const scrollAmount = carousel.offsetWidth;
@@ -593,122 +452,25 @@
             });
         };
 
-        window.closeAdmin = function() {
-            document.getElementById('adminModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        };
-
-        window.checkAdminPassword = function() {
-            const pass = document.getElementById('adminPassword').value;
-            if (pass === 'admin') {
-                document.getElementById('passwordStep').classList.add('hidden');
-                document.getElementById('googleStep').classList.remove('hidden');
-                lucide.createIcons();
-            } else {
-                alert('Senha incorreta');
-            }
-        };
-
-        window.loginWithGoogle = async function() {
-            try {
-                await signInWithPopup(auth, provider);
-            } catch (error) {
-                console.error('Login error:', error);
-                alert('Erro ao fazer login: ' + error.message);
-            }
-        };
-
-        window.logoutAdmin = async function() {
-            await signOut(auth);
-            location.reload();
-        };
-
-        window.deleteLead = async function(id) {
-            if (confirm('Tem certeza que deseja excluir este lead?')) {
-                try {
-                    await deleteDoc(doc(db, 'leads', id));
-                } catch (error) {
-                    handleFirestoreError(error, 'delete', `leads/${id}`);
-                    alert('Erro ao excluir: ' + error.message);
-                }
-            }
-        };
-
-        // Listen for Auth State
-        auth.onAuthStateChanged((user) => {
-            if (user && user.email === 'danielvendas25@gmail.com') {
-                document.getElementById('adminAuth').classList.add('hidden');
-                document.getElementById('adminContent').classList.remove('hidden');
-                loadLeads();
-            }
-        });
-
-        function loadLeads() {
-            const q = query(collection(db, 'leads'), orderBy('createdAt', 'desc'));
-            onSnapshot(q, (snapshot) => {
-                const tbody = document.getElementById('leadsTableBody');
-                const totalLeads = document.getElementById('totalLeads');
-                tbody.innerHTML = '';
-                totalLeads.innerText = snapshot.size;
-
-                snapshot.forEach((doc) => {
-                    const lead = doc.data();
-                    const date = lead.createdAt?.toDate ? lead.createdAt.toDate().toLocaleString('pt-BR') : 'Recent';
-                    
-                    const tr = document.createElement('tr');
-                    tr.className = 'border-b border-white/5 hover:bg-white/5 transition-colors';
-                    tr.innerHTML = `
-                        <td class="py-4 px-4 text-sm font-medium text-white/60">${date}</td>
-                        <td class="py-4 px-4 text-sm font-bold">${lead.name}</td>
-                        <td class="py-4 px-4 text-sm font-bold text-[#D4AF37]">${lead.whatsapp}</td>
-                        <td class="py-4 px-4 text-sm font-medium uppercase tracking-tighter">${lead.goal || '-'}</td>
-                        <td class="py-4 px-4">
-                            <button onclick="deleteLead('${doc.id}')" class="text-red-500 hover:text-red-400 p-2">
-                                <i data-lucide="trash-2" class="w-4 h-4"></i>
-                            </button>
-                        </td>
-                    `;
-                    tbody.appendChild(tr);
-                });
-                lucide.createIcons();
-            }, (error) => {
-                handleFirestoreError(error, 'list', 'leads');
-                console.error("Snapshot error:", error);
-                if (error.message.includes('permission-denied')) {
-                    alert('Acesso negado. Certifique-se de estar logado com o e-mail correto.');
-                }
-            });
-        }
-
-        // Form Handling
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        // Form Handling (Static Simulation)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const submitBtn = this.querySelector('button');
             const originalBtnText = submitBtn.innerHTML;
+            const name = document.getElementById('name').value;
+            
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Enviando...';
 
-            const formData = {
-                name: document.getElementById('name').value,
-                whatsapp: document.getElementById('phone').value,
-                goal: document.getElementById('goal').value,
-                createdAt: serverTimestamp()
-            };
-
-            try {
-                await addDoc(collection(db, 'leads'), formData);
-                alert('Obrigado, ' + formData.name + '! Sua jornada começou. Entraremos em contato em breve.');
+            // Simulate network delay
+            setTimeout(() => {
+                alert('Obrigado, ' + name + '! Sua jornada começou. Entraremos em contato em breve via WhatsApp.');
                 this.reset();
-            } catch (error) {
-                handleFirestoreError(error, 'create', 'leads');
-                console.error('Error adding document: ', error);
-                alert('Erro ao enviar dados. Por favor, tente novamente.');
-            } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
                 lucide.createIcons();
-            }
+            }, 1000);
         });
 
         // Smooth Scrolling
