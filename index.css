@@ -1,9 +1,23 @@
+/* 
+  BEM-VINDO AO CSS! 
+  Aqui definimos o estilo visual do site. 
+  Estamos usando Tailwind CSS v4, que é uma ferramenta moderna.
+*/
+
 @import "tailwindcss";
 
+/* 
+  @theme: Aqui definimos variáveis globais, como a fonte principal.
+  Neste caso, estamos usando a fonte 'Inter'.
+*/
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
+/* 
+  @layer base: Estilos básicos que se aplicam a todo o site.
+  Definimos que o fundo (background) será preto e o texto branco.
+*/
 @layer base {
   body {
     font-family: 'Inter', sans-serif;
@@ -12,18 +26,40 @@
   }
 }
 
+/* 
+  @layer components: Aqui criamos nossas próprias "classes" personalizadas 
+  que combinam vários estilos ou criam efeitos especiais.
+*/
 @layer components {
+  /* Efeito de brilho dourado no texto */
   .text-shadow-gold {
     text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
   }
 
+  /* Animação que faz o elemento aparecer suavemente (fade in) */
   .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
+    animation: fadeIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
-  .delay-1 { animation-delay: 0.2s; }
-  .delay-2 { animation-delay: 0.4s; }
+  /* Classe para elementos que "revelam" ao rolar a página */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
 
+  /* Quando o JavaScript adiciona a classe .active, o elemento aparece */
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Atrasos (delays) para que os elementos não apareçam todos ao mesmo tempo */
+  .delay-1 { animation-delay: 0.2s; transition-delay: 0.2s; }
+  .delay-2 { animation-delay: 0.4s; transition-delay: 0.4s; }
+  .delay-3 { animation-delay: 0.6s; transition-delay: 0.6s; }
+
+  /* Esconde a barra de rolagem lateral mas mantém a funcionalidade */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
@@ -33,6 +69,11 @@
   }
 }
 
+/* 
+  @keyframes: Define os passos da animação.
+  Aqui, o fadeIn começa invisível (opacity: 0) e 20px abaixo,
+  e termina visível (opacity: 1) na posição original.
+*/
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }

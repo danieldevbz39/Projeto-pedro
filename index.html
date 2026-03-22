@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Configurações básicas do navegador -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO: Informações que o Google usa para mostrar seu site -->
     <meta name="description" content="Pedro Moreira - Mestre Faixa Preta de Taekwondo. Transforme sua mente e corpo através da disciplina das artes marciais. Mais de 1400 vidas transformadas.">
     <title>Pedro Moreira - Formando Campeões para a Vida</title>
+    
+    <!-- Favicon: O ícone que aparece na aba do navegador -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+    
+    <!-- Importação do nosso arquivo CSS -->
     <link rel="stylesheet" href="/index.css">
+    
+    <!-- Lucide: Uma biblioteca de ícones simples e bonitos -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="min-h-screen selection:bg-[#D4AF37] selection:text-black">
 
-    <!-- Navigation -->
+    <!-- 
+        NAVEGAÇÃO (Menu do site)
+        fixed: mantém o menu sempre no topo ao rolar.
+        z-50: garante que o menu fique por cima de tudo.
+        backdrop-blur-xl: cria um efeito de vidro fosco atrás do menu.
+    -->
     <nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-xl border-b border-[#D4AF37]/10">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo e Nome -->
             <div class="flex items-center gap-2">
                 <div class="w-10 h-10 bg-[#D4AF37] rounded-sm flex items-center justify-center">
                     <i data-lucide="flame" class="text-black w-6 h-6"></i>
                 </div>
                 <span class="text-2xl font-black tracking-tighter uppercase italic">Pedro Moreira</span>
             </div>
+            <!-- Links do Menu (Escondidos no celular, visíveis em telas médias 'md:') -->
             <div class="hidden md:flex items-center gap-8 text-xs font-black uppercase tracking-[0.2em]">
                 <a href="#metodo" class="hover:bg-[#D4AF37] hover:text-black px-4 py-2 rounded-sm transition-all duration-300 transform hover:scale-110">O Método</a>
+                <a href="#cursos" class="hover:bg-[#D4AF37] hover:text-black px-4 py-2 rounded-sm transition-all duration-300 transform hover:scale-110">Cursos</a>
                 <a href="#depoimentos" class="hover:bg-[#D4AF37] hover:text-black px-4 py-2 rounded-sm transition-all duration-300 transform hover:scale-110">Depoimentos</a>
                 <a href="#conteudo" class="hover:bg-[#D4AF37] hover:text-black px-4 py-2 rounded-sm transition-all duration-300 transform hover:scale-110">Conteúdo</a>
                 <a href="#contato" class="bg-[#D4AF37] text-black px-8 py-3 rounded-sm transition-all duration-300 transform hover:scale-110">
@@ -31,8 +48,13 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- 
+        HERO SECTION (A primeira parte que o usuário vê)
+        min-h-screen: faz a seção ocupar pelo menos a altura inteira da tela.
+        relative: necessário para posicionar os elementos decorativos de fundo.
+    -->
     <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Elementos Decorativos de Fundo (Formas geométricas sutis) -->
         <div class="absolute inset-0 z-0">
             <div class="absolute top-0 right-0 w-1/2 h-full bg-[#D4AF37]/5 skew-x-12 transform translate-x-20"></div>
             <div class="absolute bottom-0 left-0 w-1/3 h-1/2 bg-[#D4AF37]/5 -skew-x-12 transform -translate-x-20"></div>
@@ -40,18 +62,19 @@
 
         <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Lado Esquerdo: Texto e Botão -->
                 <div class="animate-fade-in opacity-0">
-                    <div class="inline-block px-4 py-1 border-l-4 border-[#D4AF37] bg-[#D4AF37]/10 mb-8">
+                    <div class="inline-block px-4 py-1 border-l-4 border-[#D4AF37] bg-[#D4AF37]/10 mb-8 animate-fade-in opacity-0">
                         <span class="text-sm font-black uppercase tracking-[0.3em] text-[#D4AF37]">Mestre Faixa Preta</span>
                     </div>
-                    <h1 class="text-5xl md:text-7xl font-black leading-[0.9] mb-8 uppercase italic tracking-tighter">
+                    <h1 class="text-5xl md:text-7xl font-black leading-[0.9] mb-8 uppercase italic tracking-tighter animate-fade-in opacity-0 delay-1">
                         Muito além do tatame: <br>
                         <span class="text-[#D4AF37] text-shadow-gold">Formando Campeões para a Vida</span>
                     </h1>
-                    <p class="text-xl md:text-2xl text-white/70 mb-12 max-w-xl font-medium leading-tight">
+                    <p class="text-xl md:text-2xl text-white/70 mb-12 max-w-xl font-medium leading-tight animate-fade-in opacity-0 delay-2">
                         Descubra como a disciplina da Faixa Preta pode transformar sua mente, seu corpo e sua história com quem já mudou a realidade de mais de 1.400 alunos.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-6">
+                    <div class="flex flex-col sm:flex-row gap-6 animate-fade-in opacity-0 delay-3">
                         <a href="#contato" class="px-12 py-6 bg-[#D4AF37] text-black font-black uppercase tracking-[0.2em] text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 group shadow-[0_0_30px_rgba(212,175,55,0.3)]">
                             QUERO MINHA AULA EXPERIMENTAL
                             <i data-lucide="chevron-right" class="w-6 h-6 group-hover:translate-x-2 transition-transform"></i>
@@ -59,15 +82,28 @@
                     </div>
                 </div>
                 
+                <!-- Lado Direito: Vídeo ou Imagem (Escondida no celular para focar no texto) -->
                 <div class="relative hidden lg:block animate-fade-in opacity-0 delay-1">
-                    <div class="relative z-10 border-8 border-[#D4AF37]/20 p-4">
-                        <img 
-                            src="https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?auto=format&fit=crop&q=75&w=800&h=1000" 
-                            alt="Pedro Moreira, mestre faixa preta de Taekwondo em posição de guarda marcial" 
+                    <div class="relative z-10 border-8 border-[#D4AF37]/20 p-4 bg-black">
+                        <!-- 
+                            VÍDEO DE IMPACTO
+                            autoplay: começa sozinho.
+                            muted: sem som (necessário para o autoplay funcionar em muitos navegadores).
+                            loop: repete infinitamente.
+                            playsinline: importante para celulares.
+                        -->
+                        <video 
+                            autoplay 
+                            muted 
+                            loop 
+                            playsinline 
                             class="w-full grayscale hover:grayscale-0 transition-all duration-1000"
-                            referrerpolicy="no-referrer"
-                            decoding="async"
                         >
+                            <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeos.
+                        </video>
+                        
+                        <!-- Badge de Estatística -->
                         <div class="absolute -bottom-10 -left-10 bg-black border border-[#D4AF37] p-8">
                             <div class="text-5xl font-black italic text-[#D4AF37]">1.423+</div>
                             <div class="text-xs font-black uppercase tracking-widest">Vidas Transformadas</div>
@@ -78,10 +114,47 @@
         </div>
     </section>
 
-    <!-- The Black Belt Method -->
+    <!-- 
+        SEÇÃO DE VÍDEO (Impacto Visual)
+        Aqui colocamos o vídeo do leão e do logo para criar autoridade.
+        Como o vídeo é vertical (9:16), usamos uma moldura que respeite isso.
+    -->
+    <section class="py-24 bg-black reveal">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="relative aspect-[9/16] max-w-[400px] mx-auto border-4 border-[#D4AF37]/30 shadow-[0_0_50px_rgba(212,175,55,0.2)]">
+                <video 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline 
+                    class="w-full h-full object-cover"
+                >
+                    <!-- 
+                        DICA PARA O INICIANTE: 
+                        Para usar o SEU vídeo, salve o arquivo na pasta do projeto 
+                        e mude o nome abaixo para o nome do seu arquivo (ex: moreira.mp4).
+                    -->
+                    <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+                <!-- Moldura decorativa nos cantos -->
+                <div class="absolute -top-2 -left-2 w-10 h-10 border-t-2 border-l-2 border-[#D4AF37]"></div>
+                <div class="absolute -bottom-2 -right-2 w-10 h-10 border-b-2 border-r-2 border-[#D4AF37]"></div>
+            </div>
+            <div class="text-center mt-12">
+                <h3 class="text-3xl font-black uppercase italic tracking-tighter">O Espírito do <span class="text-[#D4AF37]">Leão</span></h3>
+                <p class="text-white/40 uppercase tracking-[0.3em] text-xs font-bold mt-4">Força • Coragem • Disciplina</p>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        SEÇÃO DO MÉTODO
+        reveal: classe personalizada que faz o elemento aparecer ao rolar.
+        grid: divide o espaço em colunas.
+    -->
     <section id="metodo" class="py-32 bg-[#050505] border-y border-[#D4AF37]/10">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 reveal">
                 <div class="max-w-2xl">
                     <h2 class="text-sm font-black uppercase tracking-[0.4em] text-[#D4AF37] mb-6">Sobre o Instrutor</h2>
                     <h3 class="text-5xl md:text-7xl font-black uppercase italic tracking-tighter leading-none">
@@ -95,7 +168,7 @@
             </div>
 
             <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
-                <div class="space-y-8">
+                <div class="space-y-8 reveal delay-1">
                     <p class="text-2xl text-white/80 leading-relaxed font-medium italic">
                         "Com mais de 11 anos de trajetória e a graduação de Faixa Preta, Pedro Moreira não ensina apenas técnicas de combate. Ele utiliza a filosofia das artes marciais como uma ferramenta de evolução pessoal, disciplina e superação de limites."
                     </p>
@@ -105,7 +178,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
+                <!-- Cards de Estatísticas -->
+                <div class="grid grid-cols-2 gap-4 reveal delay-2">
                     <div class="p-10 bg-black border border-[#D4AF37]/10 text-center">
                         <div class="text-5xl font-black text-[#D4AF37] mb-2 italic">+11</div>
                         <div class="text-xs font-black uppercase tracking-widest text-white/40">Anos de Experiência</div>
@@ -164,7 +238,7 @@
     <!-- Testimonials Section -->
     <section id="depoimentos" class="py-32 bg-black overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 reveal">
                 <div class="max-w-2xl">
                     <h2 class="text-sm font-black uppercase tracking-[0.4em] text-[#D4AF37] mb-6">Depoimentos</h2>
                     <h3 class="text-5xl md:text-7xl font-black uppercase italic tracking-tighter leading-none">
@@ -181,7 +255,7 @@
                 </div>
             </div>
 
-            <div id="testimonialCarousel" class="flex gap-8 overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth">
+            <div id="testimonialCarousel" class="flex gap-8 overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth reveal delay-1">
                 <!-- Testimonial 1 -->
                 <div class="min-w-full md:min-w-[450px] snap-start bg-zinc-900/50 border border-white/5 p-10 relative group">
                     <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -189,7 +263,13 @@
                     </div>
                     <div class="flex items-center gap-6 mb-8">
                         <div class="w-20 h-20 rounded-sm overflow-hidden border-2 border-[#D4AF37]/30">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=75&w=200&h=200" alt="Lucas Silva" class="w-full h-full object-cover grayscale" loading="lazy">
+                            <img 
+                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=75&w=160&h=160" 
+                                alt="Retrato de Lucas Silva, aluno e empresário transformado pelo Taekwondo" 
+                                class="w-full h-full object-cover grayscale" 
+                                loading="lazy"
+                                decoding="async"
+                            >
                         </div>
                         <div>
                             <h4 class="text-xl font-black uppercase italic tracking-tight">Lucas Silva</h4>
@@ -208,7 +288,13 @@
                     </div>
                     <div class="flex items-center gap-6 mb-8">
                         <div class="w-20 h-20 rounded-sm overflow-hidden border-2 border-[#D4AF37]/30">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=75&w=200&h=200" alt="Maria Oliveira" class="w-full h-full object-cover grayscale" loading="lazy">
+                            <img 
+                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=75&w=160&h=160" 
+                                alt="Retrato de Maria Oliveira, mãe de aluno que relata os benefícios da disciplina marcial" 
+                                class="w-full h-full object-cover grayscale" 
+                                loading="lazy"
+                                decoding="async"
+                            >
                         </div>
                         <div>
                             <h4 class="text-xl font-black uppercase italic tracking-tight">Maria Oliveira</h4>
@@ -227,7 +313,13 @@
                     </div>
                     <div class="flex items-center gap-6 mb-8">
                         <div class="w-20 h-20 rounded-sm overflow-hidden border-2 border-[#D4AF37]/30">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=75&w=200&h=200" alt="Ricardo Santos" class="w-full h-full object-cover grayscale" loading="lazy">
+                            <img 
+                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=75&w=160&h=160" 
+                                alt="Retrato de Ricardo Santos, atleta que destaca a superação de limites" 
+                                class="w-full h-full object-cover grayscale" 
+                                loading="lazy"
+                                decoding="async"
+                            >
                         </div>
                         <div>
                             <h4 class="text-xl font-black uppercase italic tracking-tight">Ricardo Santos</h4>
@@ -246,7 +338,13 @@
                     </div>
                     <div class="flex items-center gap-6 mb-8">
                         <div class="w-20 h-20 rounded-sm overflow-hidden border-2 border-[#D4AF37]/30">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=75&w=200&h=200" alt="Ana Costa" class="w-full h-full object-cover grayscale" loading="lazy">
+                            <img 
+                                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=75&w=160&h=160" 
+                                alt="Retrato de Ana Costa, estudante que valoriza o foco e desenvolvimento pessoal" 
+                                class="w-full h-full object-cover grayscale" 
+                                loading="lazy"
+                                decoding="async"
+                            >
                         </div>
                         <div>
                             <h4 class="text-xl font-black uppercase italic tracking-tight">Ana Costa</h4>
@@ -265,15 +363,15 @@
     <section id="conteudo" class="py-32 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <div>
+                <div class="reveal">
                     <h2 class="text-sm font-black uppercase tracking-[0.4em] text-[#D4AF37] mb-6">Presença Digital</h2>
                     <h3 class="text-5xl md:text-6xl font-black uppercase italic tracking-tighter mb-8">
                         600+ Conteúdos <br><span class="text-[#D4AF37]">Educativos</span>
                     </h3>
-                    <p class="text-xl text-white/60 mb-10 leading-relaxed">
+                    <p class="text-xl text-white/60 mb-10 leading-relaxed reveal delay-1">
                         Acompanhe diariamente dicas, técnicas e mentalidade para sua evolução constante em nossas redes sociais.
                     </p>
-                    <div class="flex gap-6">
+                    <div class="flex gap-6 reveal delay-2">
                         <a href="https://www.instagram.com/pedro.moreiratkd" target="_blank" class="flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 hover:bg-[#D4AF37] hover:text-black transition-all duration-300 transform hover:scale-105 group">
                             <i data-lucide="instagram" class="w-6 h-6"></i>
                             <span class="font-black uppercase tracking-widest text-sm">Instagram</span>
@@ -284,13 +382,13 @@
                         </a>
                     </div>
                 </div>
-                <div class="relative">
+                <div class="relative reveal delay-1">
                     <div class="grid grid-cols-2 gap-4">
                         <div class="space-y-4">
                             <div class="aspect-square bg-zinc-900 rounded-sm overflow-hidden border border-[#D4AF37]/20 relative group">
                                 <img 
                                     src="https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=75&w=400&h=400" 
-                                    alt="Treinamento intenso de chute lateral em saco de pancadas" 
+                                    alt="Close-up de treinamento intenso de chute lateral em saco de pancadas professional" 
                                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" 
                                     referrerpolicy="no-referrer"
                                     loading="lazy"
@@ -301,7 +399,7 @@
                             <div class="aspect-[4/5] bg-zinc-900 rounded-sm overflow-hidden border border-[#D4AF37]/20 relative group">
                                 <img 
                                     src="https://images.unsplash.com/photo-1509059852496-f3822ae057bf?auto=format&fit=crop&q=75&w=400&h=500" 
-                                    alt="Grupo de alunos praticando formas tradicionais de Taekwondo no dojang" 
+                                    alt="Grupo de alunos uniformizados praticando formas tradicionais de Taekwondo em sincronia" 
                                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" 
                                     referrerpolicy="no-referrer"
                                     loading="lazy"
@@ -313,7 +411,7 @@
                             <div class="aspect-[4/5] bg-zinc-900 rounded-sm overflow-hidden border border-[#D4AF37]/20 relative group">
                                 <img 
                                     src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=75&w=400&h=500" 
-                                    alt="Momento de meditação e foco mental antes do início do treino" 
+                                    alt="Momento solene de meditação e concentração mental antes do início do treinamento marcial" 
                                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" 
                                     referrerpolicy="no-referrer"
                                     loading="lazy"
@@ -323,7 +421,7 @@
                             <div class="aspect-square bg-zinc-900 rounded-sm overflow-hidden border border-[#D4AF37]/20 relative group">
                                 <img 
                                     src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=75&w=400&h=400" 
-                                    alt="Equipamentos de proteção profissional e faixas de graduação organizadas" 
+                                    alt="Equipamentos de proteção profissional e faixas de graduação organizadas no dojang" 
                                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" 
                                     referrerpolicy="no-referrer"
                                     loading="lazy"
@@ -337,11 +435,132 @@
         </div>
     </section>
 
+    <!-- 
+        SEÇÃO DE CURSOS
+        Aqui mostramos os cards dos cursos disponíveis.
+    -->
+    <section id="cursos" class="py-32 bg-[#0a0a0a] border-y border-[#D4AF37]/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 reveal">
+                <div class="max-w-2xl">
+                    <h2 class="text-sm font-black uppercase tracking-[0.4em] text-[#D4AF37] mb-6">Programas de Treinamento</h2>
+                    <h3 class="text-5xl md:text-7xl font-black uppercase italic tracking-tighter leading-none">
+                        Nossos <br> <span class="text-[#D4AF37]">Cursos</span>
+                    </h3>
+                </div>
+                <div class="text-right">
+                    <p class="text-white/40 font-bold uppercase tracking-widest">Evolução Constante</p>
+                </div>
+            </div>
+
+            <!-- Grid de Cards de Cursos -->
+            <div class="grid md:grid-cols-3 gap-8 mb-24 reveal delay-1">
+                <!-- Card de Curso (Repetível) -->
+                <div class="group bg-black border border-[#D4AF37]/20 p-8 hover:border-[#D4AF37] transition-all duration-500 transform hover:-translate-y-2">
+                    <div class="aspect-video mb-8 overflow-hidden bg-zinc-900 border border-[#D4AF37]/10">
+                        <img 
+                            src="https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=75&w=600&h=338" 
+                            alt="Crianças praticando Taekwondo, desenvolvendo disciplina e coordenação" 
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-2xl font-black uppercase italic tracking-tighter">Taekwondo Kids</h4>
+                        <span class="text-[10px] font-black uppercase tracking-widest bg-[#D4AF37] text-black px-2 py-1">Iniciante</span>
+                    </div>
+                    <p class="text-white/60 mb-8 text-sm leading-relaxed">Desenvolvimento de disciplina, respeito e coordenação motora para crianças de 6 a 12 anos.</p>
+                    <div class="flex items-center justify-between pt-6 border-t border-white/10">
+                        <span class="text-xs font-black uppercase tracking-widest text-[#D4AF37]">3x por semana</span>
+                        <a href="#contato" class="text-xs font-black uppercase tracking-widest hover:text-[#D4AF37] transition-colors">Saiba Mais +</a>
+                    </div>
+                </div>
+                <!-- ... outros cards seguem o mesmo padrão ... -->
+
+                <!-- Course 2 -->
+                <div class="group bg-black border border-[#D4AF37]/20 p-8 hover:border-[#D4AF37] transition-all duration-500 transform hover:-translate-y-2">
+                    <div class="aspect-video mb-8 overflow-hidden bg-zinc-900 border border-[#D4AF37]/10">
+                        <img 
+                            src="https://images.unsplash.com/photo-1599058917233-358384456332?auto=format&fit=crop&q=75&w=600&h=338" 
+                            alt="Prática de técnicas de defesa pessoal em ambiente controlado" 
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-2xl font-black uppercase italic tracking-tighter">Defesa Pessoal</h4>
+                        <span class="text-[10px] font-black uppercase tracking-widest bg-[#D4AF37] text-black px-2 py-1">Intermediário</span>
+                    </div>
+                    <p class="text-white/60 mb-8 text-sm leading-relaxed">Técnicas práticas e eficientes para situações reais, focando em agilidade e consciência situacional.</p>
+                    <div class="flex items-center justify-between pt-6 border-t border-white/10">
+                        <span class="text-xs font-black uppercase tracking-widest text-[#D4AF37]">2x por semana</span>
+                        <a href="#contato" class="text-xs font-black uppercase tracking-widest hover:text-[#D4AF37] transition-colors">Saiba Mais +</a>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="group bg-black border border-[#D4AF37]/20 p-8 hover:border-[#D4AF37] transition-all duration-500 transform hover:-translate-y-2">
+                    <div class="aspect-video mb-8 overflow-hidden bg-zinc-900 border border-[#D4AF37]/10">
+                        <img 
+                            src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&q=75&w=600&h=338" 
+                            alt="Treinamento de combate de elite, focando em técnica e performance" 
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-2xl font-black uppercase italic tracking-tighter">Elite Sparring</h4>
+                        <span class="text-[10px] font-black uppercase tracking-widest bg-[#D4AF37] text-black px-2 py-1">Avançado</span>
+                    </div>
+                    <p class="text-white/60 mb-8 text-sm leading-relaxed">Treinamento de alta performance para competidores e alunos que buscam o limite da técnica marcial.</p>
+                    <div class="flex items-center justify-between pt-6 border-t border-white/10">
+                        <span class="text-xs font-black uppercase tracking-widest text-[#D4AF37]">Diário</span>
+                        <a href="#contato" class="text-xs font-black uppercase tracking-widest hover:text-[#D4AF37] transition-colors">Saiba Mais +</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fields to "Add" Courses (Request Form) -->
+            <div class="bg-black border border-[#D4AF37]/30 p-12 max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h4 class="text-3xl font-black uppercase italic tracking-tighter mb-4">Sugerir Novo <span class="text-[#D4AF37]">Curso</span></h4>
+                    <p class="text-white/40 uppercase tracking-widest text-xs font-bold">Não encontrou o que procurava? Sugira um treinamento personalizado.</p>
+                </div>
+                <form id="courseSuggestionForm" class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-[#D4AF37]">Nome do Curso</label>
+                        <input type="text" required placeholder="Ex: Taekwondo para Executivos" class="w-full bg-zinc-900 border border-white/10 px-6 py-4 focus:border-[#D4AF37] outline-none transition-colors font-bold">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-[#D4AF37]">Nível Pretendido</label>
+                        <select class="w-full bg-zinc-900 border border-white/10 px-6 py-4 focus:border-[#D4AF37] outline-none transition-colors font-bold appearance-none">
+                            <option>Iniciante</option>
+                            <option>Intermediário</option>
+                            <option>Avançado</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-[#D4AF37]">Descrição do Objetivo</label>
+                        <textarea rows="3" placeholder="O que você espera aprender neste curso?" class="w-full bg-zinc-900 border border-white/10 px-6 py-4 focus:border-[#D4AF37] outline-none transition-colors font-bold resize-none"></textarea>
+                    </div>
+                    <div class="md:col-span-2">
+                        <button type="submit" class="w-full py-4 bg-white text-black font-black uppercase tracking-widest hover:bg-[#D4AF37] transition-all transform hover:scale-[1.02]">
+                            ENVIAR SUGESTÃO
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Lead Capture Section -->
     <section id="contato" class="py-32 bg-black">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <div>
+                <div class="reveal">
                     <h2 class="text-sm font-black uppercase tracking-[0.4em] text-[#D4AF37] mb-6">Próximo Passo</h2>
                     <h3 class="text-5xl md:text-7xl font-black uppercase italic tracking-tighter mb-8 leading-none">
                         Sua Jornada <br> Começa <span class="text-[#D4AF37]">Aqui</span>
@@ -349,7 +568,7 @@
                     <p class="text-2xl font-black uppercase italic text-[#D4AF37] mb-8">
                         "Sua jornada para se tornar um campeão começa com o primeiro passo. Você está pronto?"
                     </p>
-                    <div class="space-y-8">
+                    <div class="space-y-8 reveal delay-1">
                         <div class="flex items-start gap-6">
                             <div class="w-12 h-12 bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] shrink-0">
                                 <i data-lucide="check-circle-2" class="w-6 h-6"></i>
@@ -362,7 +581,7 @@
                     </div>
                 </div>
 
-                <div class="bg-zinc-900 p-10 md:p-16 border border-[#D4AF37]/20 relative">
+                <div class="bg-zinc-900 p-10 md:p-16 border border-[#D4AF37]/20 relative reveal delay-1">
                     <div class="absolute -top-4 -right-4 w-20 h-20 border-t-4 border-r-4 border-[#D4AF37]"></div>
                     <form id="contactForm" class="space-y-6">
                         <div>
@@ -438,52 +657,67 @@
         </div>
     </footer>
 
+    <!-- 
+        JAVASCRIPT (A "inteligência" do site)
+        Aqui definimos o que acontece quando o usuário clica em botões ou rola a página.
+    -->
     <script>
-        // Initialize Lucide Icons
+        // Inicializa os ícones da biblioteca Lucide
         lucide.createIcons();
 
-        // Carousel Scroll Logic
+        // Lógica para o Carrossel de Depoimentos
+        // direction: 1 para direita, -1 para esquerda
         window.scrollCarousel = function(direction) {
             const carousel = document.getElementById('testimonialCarousel');
-            const scrollAmount = carousel.offsetWidth;
+            const scrollAmount = carousel.offsetWidth; // Pega a largura visível do carrossel
             carousel.scrollBy({
                 left: scrollAmount * direction,
-                behavior: 'smooth'
+                behavior: 'smooth' // Faz a rolagem ser suave
             });
         };
 
-        // Form Handling (Static Simulation)
+        // Manipulação do Formulário de Contato
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // Impede a página de recarregar ao enviar
             
             const submitBtn = this.querySelector('button');
             const originalBtnText = submitBtn.innerHTML;
             const name = document.getElementById('name').value;
             
-            submitBtn.disabled = true;
+            submitBtn.disabled = true; // Desativa o botão para evitar cliques duplos
             submitBtn.innerHTML = 'Enviando...';
 
-            // Simulate network delay
+            // Simula um tempo de espera de rede (1 segundo)
             setTimeout(() => {
                 alert('Obrigado, ' + name + '! Sua jornada começou. Entraremos em contato em breve via WhatsApp.');
-                this.reset();
+                this.reset(); // Limpa os campos do formulário
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
-                lucide.createIcons();
+                lucide.createIcons(); // Recria os ícones que estavam dentro do botão
             }, 1000);
         });
 
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+        // Lógica de Animação ao Rolar (Scroll Reveal)
+        // Esta função detecta quando um elemento aparece na tela
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Adiciona a classe 'active' que definimos no CSS
+                    entry.target.classList.add('active');
+                    // Para de observar o elemento depois que ele já apareceu
+                    observer.unobserve(entry.target);
                 }
             });
+        };
+
+        // Configura o "Observador"
+        const revealObserver = new IntersectionObserver(revealCallback, {
+            threshold: 0.15 // O elemento precisa estar 15% visível para disparar
+        });
+
+        // Aplica o observador em todos os elementos que têm a classe '.reveal'
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
         });
     </script>
 </body>
